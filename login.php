@@ -1,35 +1,34 @@
 <?php
-    session_start();
+    
     include "layout/header.php";
-    
-    $user = "Dupond";
-    $passwd = "qwerty";
-    $login = "Merci! Vous êtes mainenent connecté";
-   
-?>
+    require "model/connexion.php";
+    require "model/userModel.php";
 
-<?php if(!empty($_POST)){
-    $userAccount = $_POST;
-    if($user==$userAccount["user"] && $passwd==$userAccount["passwd"]){
-        //déclaration de la variable de session
-        $_SESSION['user']=$userAccount["user"];
-        //redirection
-        header("Location:index.php");
-    exit;
+// Si les champ nom et mot de passe ont été remplis
+if(isset($_POST["email"]) && isset($_POST["password"])) {
+    $user = getUserByEmail($db, $_POST["email"]);
+    //Si la base de données a renvoyé un utilisateur avec ce mail
+    if($user){
+    // On vérifie qu'ils correspondent aux information du tableau
+        if(password_verify($_POST["password"], $user["customer_password"])) {
+            // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index
+            session_start();
+            $_SESSION["user"] = $user;
+            header("Location:index.php");
+            exit;
+        }
     }
-    else{
-        $error = "Identifiants invalides, merci de réssayéer";
-    
-    }
+    // Si les données rentrées dans le formulaire ne sont pas les bonnes
+        $error_message = "Identifiants invalides";
 }
+
 ?>
 
 
-<?php if (isset($error)): ?>
+<?php if (isset($error_message)): ?>
     <div class="alert alert-danger text-center" role="alert">
-        <?php echo $error ?>
-        <p>Retourner à l'acceuil</p>
-        <a class="btn btn-dark text white" href="index.php">Accueil</a>
+        <?php echo $error_message ?>
+       
     </div>
 <?php endif ?>
 
@@ -37,8 +36,10 @@
     <div class="col-12 col-md-4 offset-md-4 text-center">
         <h2>Connexion</h2>
         <form action="" method="post">
-            <input name="user"class="form-control my-2" type="text">
-            <input name="passwd" class="form-control my-2" type="text">
+            <label for="email" class="form-label" >Votre Mail :</label>
+            <input name="email"class="form-control my-2" type="email">
+            <label for="password" class="form-label" >Votre Mot de passe :</label>
+            <input name="password" class="form-control my-2" type="password">
             <input name="login" class="form-control btn btn-dark text-white my-2" type="submit" value="Me connecter">
         </form>
     </div>    

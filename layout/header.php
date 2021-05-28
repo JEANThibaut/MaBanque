@@ -29,6 +29,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.php">Voir mes comptes</a></li>
                 <li><a class="dropdown-item" href="virement.php">Faire un virement</a></li>
+                <li><a class="dropdown-item" href="createAccount.php">Créer un compte</a></li>
                 <li><a class="dropdown-item" href="budget.php">Mon budget</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="logout.php">Déconnexion</a></li>

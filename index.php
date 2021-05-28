@@ -6,28 +6,24 @@
     }
 
     include "layout/header.php";
+    require "model/connexion.php";
     require "model/accounts.php";
     
-    $accounts= get_accounts();
+    $accounts= Account($db, $_SESSION["user"]["id"]);
+       
 ?>
 
-<section class="container-fluid my-5 text-center"> 
-    <h2>Vos Comptes en banques</h2>
-        <div class="row">
-            <?php foreach($accounts as $index => $account): ?>
-            <article class="card col-lg-3 col-md-8 col-sm-10 text-center my-3 mx-auto">
-                <div>
-                    <h3><?php echo $account["name"]?></h3>
-                    <p><?php echo $account["number"] ?></p>
-                    <h3>Propiétaire :</h3>
-                    <p><?php echo $account["owner"]?></p>
-                    <h3>Solde Restant: </h3>
-                    <p><?php echo $account["amount"]?> €</p>
-                </div>
-            </article>
-            <?php endforeach ?>
+
+<h2 class="text-center my-3">Vos comptes</h2>
+<div class="row">
+    <?php foreach($accounts as $account):?>
+        <div class="card col-lg-3 mx-5 my-3 py-3 text-center">
+            <h4><?php echo $account["account_type"]; ?></h4>
+            <p>Solde restant : <?php echo $account["amount"];?></p>
+            <a class="btn btn-dark" href="singleAccount.php?id=<?php echo $account["id"]?>">Voir le compte</a>
         </div>
-</section>
+    <?php endforeach; ?>
+</div>
 
 <?php
     include "layout/footer.php";

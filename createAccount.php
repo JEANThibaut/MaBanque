@@ -1,12 +1,15 @@
 <?php  session_start();
     include "layout/header.php";
     require "model/accounts.php";
-    require "model?connexion.php";
+    require "model/connexion.php";
 
       if(!empty($_POST)){
         var_dump($_POST);
         if(!addAccount($db, $_POST)){
           echo "Erreur d'enregistrement, merci de réessayer!";
+        }
+        else{
+          header("Location:index.php");
         }
       }
 ?>
@@ -16,14 +19,27 @@
 
   <p>Afin de créer votre compte merci de bien vouloir remplir le formulaire suivant:</p>
   <form action="" method="post">
-    <div class="card w-50">
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>Choissisez votre type de compte</option>
-        <option value="1">Compte courant</option>
-        <option value="2">Compte Professionel</option>
-        <option value="3">Livret A</option>
+    <div class="w-50">
+    <label for="account-type" class="form-label">Choissisez votre type de compte</label>
+      <select name="account_type" id="account-type" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option value="CompteCourant">Compte courant</option>
+        <option value="ComptePro">Compte Professionel</option>
+        <option value="LivretA">Livret A</option>
       </select>
     </div>
+    <label for="amount" class="form-label w-50"></label>
+    <input type="number" name="amount" id="amount" class="form-control w-50" placeholder="Entrer la somme ici" required/>
+
+    <div>
+      <label for="uncover_permission" class="form-label ">Voulez vous une autorisation de découvert?</label>
+      <select name="uncover_permission" id="uncover_permission" class="form-select form-select-sm w-50" aria-label=".form-select-sm example">
+          <option value="Non">Non</option>
+          <option value="Yes">Oui</option>
+    </div>  
+
+
+    <input type="submit" value="Envoyer" class="bn btn-dark"/>
+  
   </form>
 
 </div>

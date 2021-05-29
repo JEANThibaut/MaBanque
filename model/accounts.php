@@ -24,7 +24,8 @@ function getAccount(PDO $db, int $id) {
 }
 
 function addAccount(PDO $db, array $account):bool {
-    $query= $db->prepare("INSERT INTO account(account_type, create_date,account_number, amount, customer_id) VALUES (:account_type, NOW(), 2424242424, :amount, :customer_id)");
+    $query= $db->prepare("INSERT INTO account(account_type, create_date,account_number, amount, customer_id)
+                             VALUES (:account_type, NOW(), 2424242424, :amount, :customer_id)");
     $result= $query->execute([
         "account_type" => $account["account_type"],
         "amount" => $account["amount"],

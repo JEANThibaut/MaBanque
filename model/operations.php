@@ -21,8 +21,12 @@ function lastOperation(PDO $db, $id) {
     return $result;
 }
 
-function addOperation(PDO $db, $id1, $id2){
-    
+function debitOperation(PDO $db, $id){
+
+}
+
+function creditOperation(PDO $db, $id){
+
 }
 ?>
 

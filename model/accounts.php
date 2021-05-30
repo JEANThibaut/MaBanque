@@ -1,14 +1,18 @@
 <?php
 require "model/userModel.php";
 
+
+//query for all accounts
 function Account(PDO $db, int $id){
     $query = $db->prepare("SELECT * FROM account WHERE customer_id=:id");
     $query->execute([
-    "id" => $id
+        "id" => $id
     ]);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//query for all accounts and credit card
 function getAccount(PDO $db, int $id) {
     $query = $db->prepare(
         "SELECT * FROM account AS a
@@ -23,6 +27,7 @@ function getAccount(PDO $db, int $id) {
     return $result;
 }
 
+//query for add a new account in database
 function addAccount(PDO $db, array $account):bool {
     $query= $db->prepare("INSERT INTO account(account_type, create_date,account_number, amount, customer_id)
                              VALUES (:account_type, NOW(), 2424242424, :amount, :customer_id)");

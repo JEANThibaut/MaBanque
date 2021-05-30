@@ -1,22 +1,17 @@
 <?php  session_start();
     include "layout/header.php";
     require "model/connexion.php";
-    include "model/accounts.php";
+    require "model/accounts.php";
+    require "model/operations.php";
 
     $accounts=Account($db, $_SESSION["user"]["id"]);
     var_dump($_POST);
     if(!empty($_POST)){
-        var_dump($_POST);
-        echo "LISTE DES COMPTES  ";
-        var_dump($accounts);
-        echo "DEBIT ";
-        var_dump($_POST["debit_account"]);
-        echo "CREDIT ";
-        var_dump($_POST["credit_account"]);
+        // creditOperation($db, $_POST);
+        // debitOperation($db, $_POST);
+        // addCredit($db, $_POST);
     }
-    else{
-        echo "Le virement à échoué";
-    }
+        
 ?>
 
 

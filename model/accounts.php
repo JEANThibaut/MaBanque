@@ -39,4 +39,28 @@ function addAccount(PDO $db, array $account):bool {
     return $result;
 }
 
+function debitOperation(PDO $db, $id){
+    $query = $db->prepare(
+        "UPDATE account 
+        SET amount=:amount
+        WHERE id=:id"
+    );
+    $query->execute([
+        "id" => $id,
+        "amount" => "amount"-$id["operation"]
+    ]);
+}
+
+function creditOperation(PDO $db, $id){
+    $query = $db->prepare(
+        "UPDATE account 
+        SET amount=:amount
+        WHERE id=:id"
+    );
+    $query->execute([
+        "id" => $id,
+        "amount" => "amount"+$id["operation"]
+    ]);
+}
+
 ?>

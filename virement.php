@@ -1,35 +1,45 @@
 <?php  session_start();
     include "layout/header.php";
     require "model/connexion.php";
-    include "model/accounts.php";
+    require "model/accounts.php";
+    require "model/operations.php";
 
-    $accounts=Accounts($db);
+    $accounts=Account($db, $_SESSION["user"]["id"]);
+    var_dump($_POST);
+    if(!empty($_POST)){
+        // creditOperation($db, $_POST);
+        // debitOperation($db, $_POST);
+        // addCredit($db, $_POST);
+    }
+        
 ?>
 
 
-
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Compte à débiter
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <?php foreach($accounts as $account):?>
-        <li><a class="dropdown-item" href="#"><?php echo $account["account_type"] ?></a></li>
-        <?php endforeach;?>
-    </ul>
-    </div>
-
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Compte à créditer
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <?php foreach($accounts as $account):?>
-        <li><a class="dropdown-item" href="#"><?php echo $account["account_type"] ?></a></li>
-        <?php endforeach;?>
-    </ul>
-    </div>
-
+<div class="w-50 mx-auto text-center">
+    <form action="" method="post">
+        <div class="dropdown">
+            <label for="debit_account" class="form-label">Compte à débiter</label>
+            <select name="debit_account" id="debit_account" class="form-select">
+                        <?php foreach($accounts as $account):?>
+                        <option value="<?php echo $account["id"] ?>"><?php echo $account["account_type"] ?></option>    
+                        <?php endforeach;?>
+            </select>
+        </div>
+        <div>
+            <label for="operation" class="form-label"></label>  
+            <input type="number" name="operation" id="operation" class="form-control" placeholder="Entrer la somme à transférer" required/>          
+        </div>            
+        <div class="dropdown">
+            <label for="credit_account" class="form-label">Compte à créditer</label>
+            <select name="credit_account" id="credit_account" class="form-select ">
+                <?php foreach($accounts as $account):?>
+                <option value="<?php echo $account["id"] ?>"><?php echo $account["account_type"] ?></option>    
+                <?php endforeach;?>
+            </select>           
+        </div>
+        <input type="submit" value="Envoyer" class="my-3 btn btn-dark"/>
+    </form>
+</div>
 
 
 <?php

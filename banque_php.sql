@@ -86,4 +86,6 @@ VALUES
 ('Virement',58.3, 'Remboursement facture',1),
 ("Paiement Carte", -56.4, 'Amazon', 1),
 ("Virement",562.36, 'Accompte du mois de Juin',2),
-('Paiement Carte', -895.25,'Achat fournitures',5)
+('Paiement Carte', -895.25,'Achat fournitures',5),
+('Virement', 200, 'premier versement',3),
+('Virement', 200, 'premier versement',4)

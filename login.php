@@ -1,17 +1,18 @@
 <?php
-    require "model/connexion.php";
-    require "model/userModel.php";
+    
+    require "model/CustomerModel.php";
 
 // Si les champ nom et mot de passe ont été remplis
 if(isset($_POST["email"]) && isset($_POST["password"])) {
-    $user = getUserByEmail($db, $_POST["email"]);
+    $customerModel = new CustomerModel();
+    $customer = $customerModel->getCustomerByEmail($_POST);
     //Si la base de données a renvoyé un utilisateur avec ce mail
-    if($user){
+    if($customer){
     // On vérifie qu'ils correspondent aux information du tableau
-        if(password_verify($_POST["password"], $user["customer_password"])) {
+        if(password_verify($_POST["password"], $customer->getCustomer_password())) {
             // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index
             session_start();
-            $_SESSION["user"] = $user;
+            $_SESSION["user"] = $customer;
             header("Location:index.php");
             exit;
         }

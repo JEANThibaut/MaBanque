@@ -1,6 +1,6 @@
 <?php
-    require "model/connexion.php";
-    require "model/accounts.php";
+   
+    require "model/AccountsModel.php";
     
     session_start();
     if(!isset($_SESSION["user"])){
@@ -8,7 +8,7 @@
         exit;
     }
 
-    $accounts= Account($db, $_SESSION["user"]["id"]);
+    // $accounts= Account($db, $_SESSION["user"]["id"]);
 
 
     require "view/indexView.php" 

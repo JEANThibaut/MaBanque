@@ -1,5 +1,6 @@
 <?php 
     include "view/layout/header.php";
+    require "model/AccountsModel.php";
 ?>
 
 <h2 class="text-center my-3">Vos comptes</h2>

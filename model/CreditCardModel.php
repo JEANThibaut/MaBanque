@@ -11,8 +11,16 @@
                 "id" => $id
             ]);
             $result = $query->fetch(PDO::FETCH_ASSOC);
+            var_dump($result);
+            // $result= new CreditCard($result);
+            // return $result;
+            if(!$result){
+                return false;
+            }
+            else{
             $result= new CreditCard($result);
             return $result;
+            }
         }
 
         

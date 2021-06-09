@@ -5,7 +5,7 @@
     protected int $id;
     protected string $account_type;
     protected int $account_number;
-    protected int $amount;
+    protected float $amount;
     protected ?int $uncover_permission;
     protected int $customer_id;
 
@@ -46,7 +46,7 @@
     }
 
 
-    public function setAmount(int $amount){
+    public function setAmount(float $amount){
         $this->amount=$amount;
     }
     public function getAmount(){

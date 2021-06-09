@@ -26,7 +26,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
     $creditCardModel= new CreditCardModel();
     $creditCard=$creditCardModel->getCreditCard($_GET["id"]);
 
-
+ 
 
 
          

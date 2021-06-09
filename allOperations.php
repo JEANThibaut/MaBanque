@@ -5,9 +5,11 @@
         exit;
     }
 
-    require "model/operations.php";
-    require "model/connexion.php";
-    $operations= Operation($db, $_GET["id"]);
+    require "model/OperationsModel.php";
+    require "model/entity/Operation.php";
+    
+    $operationsModel= new OperationsModel();
+    $operations= $operationsModel->getAllOperations($_GET["id"]);
 
     include "view/allOperationView.php"
 ?>

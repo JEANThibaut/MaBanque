@@ -14,10 +14,10 @@
     </tr>
     <?php foreach($operations as $operation):?>
         <tr class="text-center">
-            <td><?php echo $operation["operation_date"];?></td>
-            <td><?php echo $operation["operation_type"];?></td>
-            <td><?php echo $operation["operation_amount"];?>€</td>
-            <td><?php echo $operation["label"];?></td>
+            <td><?php echo $operation->getOperation_date();?></td>
+            <td><?php echo $operation->getOperation_type();?></td>
+            <td><?php echo $operation->getOperation_amount();?>€</td>
+            <td><?php echo $operation->getLabel();?></td>
         </tr>
     <?php endforeach; ?>
 </table>

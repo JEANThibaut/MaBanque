@@ -15,7 +15,7 @@
     $accountModel=new AccountModel();
     $customer=$_SESSION["user"];
     $accounts = $accountModel->getAllAccount($customer->getId());
-    var_dump($customer);
+    
     
 
 

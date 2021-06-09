@@ -13,7 +13,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
             // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index
             
             session_start();
-            // $_SESSION["user"] = $customer;
+            $_SESSION["user"] = $customer;
             header("Location:index.php");
             exit;
         }

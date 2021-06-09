@@ -22,6 +22,7 @@
                 "id"=> $id
             ]);
             $result = $query->fetch(PDO::FETCH_ASSOC);
+            $result = new Account($result);
             return $result;
         }
 

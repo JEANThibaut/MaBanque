@@ -1,14 +1,25 @@
 <?php
+    require "model/entity/Account.php";
+    require "model/AccountsModel.php";
+    require "model/entity/Customer.php";
     require "model/CustomerModel.php";
     
+
     session_start();
     if(!isset($_SESSION["user"])){
         header("Location:login.php");
         exit;
     }
+    
+    
+    $accountModel=new AccountModel();
+    $customer=$_SESSION["user"];
+    $accounts = $accountModel->getAllAccount($customer->getId());
+    var_dump($customer);
+    
 
-    // $accounts= Account($db, $_SESSION["user"]["id"]);
-    var_dump($_SESSION["user"]);
+
+    
 
     require "view/indexView.php" 
 ?>

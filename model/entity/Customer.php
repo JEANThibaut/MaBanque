@@ -60,11 +60,18 @@
         }
 
 
-        public function setStreet_number(string $street_number){
+        public function setStreet_number(int $street_number){
             $this->street_number=$street_number;
         }
         public function getStreet_number(){
             return $this->street_number;
+        }
+
+        public function setStreet(string $street){
+            $this->street=$street;
+        }
+        public function getStreet(){
+            return $this->street;
         }
 
 

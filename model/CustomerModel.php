@@ -1,5 +1,5 @@
 <?php 
-    require "model/entity/Customer.php";
+    
 
     class CustomerModel{
         private PDO $db;

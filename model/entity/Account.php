@@ -6,7 +6,7 @@
     protected string $account_type;
     protected int $account_number;
     protected int $amount;
-    protected int $uncover_permission;
+    protected ?int $uncover_permission;
     protected int $customer_id;
 
 
@@ -38,6 +38,14 @@
     }
 
 
+    public function setAccount_number(string $account_number){
+        $this->account_number=$account_number;
+    }
+    public function getAccount_number(){
+        return $this->account_number;
+    }
+
+
     public function setAmount(int $amount){
         $this->amount=$amount;
     }
@@ -46,7 +54,7 @@
     }
 
 
-    public function setUncover_permission(int $uncover_permission){
+    public function setUncover_permission(?int $uncover_permission){
         $this->uncover_permission=$uncover_permission;
     }
     public function getUncover_permission(){

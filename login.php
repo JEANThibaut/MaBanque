@@ -1,5 +1,5 @@
 <?php
-    
+    require "model/entity/Customer.php";
     require "model/CustomerModel.php";
 
 // Si les champ nom et mot de passe ont été remplis
@@ -11,8 +11,9 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
     // On vérifie qu'ils correspondent aux information du tableau
         if(password_verify($_POST["password"], $customer->getCustomer_password())) {
             // On démarre une session et on stocke l'utilisateur dedans avant de l'envoyer sur index
+            
             session_start();
-            $_SESSION["user"] = $customer;
+            // $_SESSION["user"] = $customer;
             header("Location:index.php");
             exit;
         }

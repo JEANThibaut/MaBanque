@@ -5,14 +5,15 @@
         exit;
     }
 
-require "model/connexion.php";
-require "model/accounts.php";
+    require "model/entity/CreditCard.php";
+    require "model/CreditCardModel.php";
+
 
 if(isset($_GET["id"]) && !empty($_GET["id"])) {
-    
-    $account = getAccount($db, $_GET["id"]);
+    $creditCardModel= new CreditCardModel();
+    $creditCard=$creditCardModel->getCreditCard($_GET["id"]);
 }    else {
     header("Location:index.php");
 }
-    include "view/singleAccountView.php"
+    include "view/singleCardView.php"
 ?>

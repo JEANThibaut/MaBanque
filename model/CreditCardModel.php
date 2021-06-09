@@ -1,7 +1,7 @@
 <?php 
 
 
-    class CreditCarModel{
+    class CreditCardModel{
         
         private PDO $db;
 
@@ -11,12 +11,11 @@
                 "id" => $id
             ]);
             $result = $query->fetch(PDO::FETCH_ASSOC);
-            $result= new CreditCard();
+            $result= new CreditCard($result);
             return $result;
         }
 
         
-
 
         public function __construct(){
             $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');

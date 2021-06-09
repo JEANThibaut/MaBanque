@@ -11,10 +11,10 @@
     <h5>Numéro du compte</h5>
     <p><?php echo $account->getAccount_number()?></p>
     <p>Solde restant : <?php echo $account->getAmount()?> €</p>
-    <h6>Carte associé :</h6>
+    <h6>Carte associé :<?php echo $creditCard->getCard_type();?></h6>
     
     
-<a class="btn btn-dark w-50 mx-auto" href="singleCard.php?id=#>">Voir le détail</a>
+<a class="btn btn-dark w-50 mx-auto" href="singleCard.php?id=<?php echo $_GET["id"]?>">Voir le détail</a>
 </div>
 
 <h3>Dernière Opération</h3>

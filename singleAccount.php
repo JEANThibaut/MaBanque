@@ -5,13 +5,13 @@
         exit;
     }
 
-
-require "model/entity/Account.php";
-require "model/AccountsModel.php";
-require "model/entity/Operation.php";
-require "model/OperationsModel.php";
-require "model/entity/CreditCard.php";
-require "model/CreditCardModel.php";
+    require "model/ConnexionModel.php";
+    require "model/entity/Account.php";
+    require "model/AccountsModel.php";
+    require "model/entity/Operation.php";
+    require "model/OperationsModel.php";
+    require "model/entity/CreditCard.php";
+    require "model/CreditCardModel.php";
 
 
 if(isset($_GET["id"]) && !empty($_GET["id"])) {
@@ -34,9 +34,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 else {
     header("Location:index.php");
 }
-// if(($account[0]["card_type"])==NULL){
-//     $account[0]["card_type"]= "Aucune";
-// }
+
 include "view/singleAccountView.php"
 
 ?>

@@ -27,7 +27,7 @@
  
 
 
-        public function setId(string $id){
+        public function setId(int $id){
             $this->id=$id;
         }
         public function getId(){
@@ -75,7 +75,7 @@
         }
 
 
-        public function setPostal_code(string $postal_code){
+        public function setPostal_code(int $postal_code){
             $this->postal_code=$postal_code;
         }
         public function getPostal_code(){
@@ -91,7 +91,7 @@
         }
 
 
-        public function setPhone(string $phone){
+        public function setPhone(int $phone){
             $this->phone=$phone;
         }
         public function getPhone(){

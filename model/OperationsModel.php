@@ -29,10 +29,12 @@
                 return $result;
             }
 
-
             public function __construct(){
-                $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
+                $this->db = ConnexionModel::getDB();
             }
+            // public function __construct(){
+            //     $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
+            // }
         
 // function addCredit(PDO $db, array $operation):bool{
 //     $query= $db->prepare("INSERT INTO operation(operation_date, operation_type, operation_amount,:label, account_id)

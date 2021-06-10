@@ -54,7 +54,7 @@
     }
 
 
-    public function setUncover_permission(?int $uncover_permission){
+    public function setUncover_perm(?int $uncover_permission){
         $this->uncover_permission=$uncover_permission;
     }
     public function getUncover_permission(){

@@ -11,7 +11,6 @@
                 "id" => $id
             ]);
             $result = $query->fetch(PDO::FETCH_ASSOC);
-            var_dump($result);
             // $result= new CreditCard($result);
             // return $result;
             if(!$result){
@@ -23,10 +22,9 @@
             }
         }
 
-        
 
         public function __construct(){
-            $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
+            $this->db = ConnexionModel::getDB();
         }
 
 

@@ -15,10 +15,12 @@
             return $result;
         }   
         
-
         public function __construct(){
-            $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
+            $this->db = ConnexionModel::getDB();
         }
+        // public function __construct(){
+        //     $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
+        // }
     }
         
 ?>

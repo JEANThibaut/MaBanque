@@ -4,7 +4,7 @@
         header("Location:login.php");
         exit;
     }
-
+    require "model/ConnexionModel.php";
     require "model/OperationsModel.php";
     require "model/entity/Operation.php";
     

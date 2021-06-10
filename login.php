@@ -1,6 +1,8 @@
 <?php
+    require "model/ConnexionModel.php";
     require "model/entity/Customer.php";
     require "model/CustomerModel.php";
+    
 
 // Si les champ nom et mot de passe ont été remplis
 if(isset($_POST["email"]) && isset($_POST["password"])) {

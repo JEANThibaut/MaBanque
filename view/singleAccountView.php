@@ -16,7 +16,7 @@
     <?php if($creditCard):?>
         <a class="btn btn-dark w-50 mx-auto" href="singleCard.php?id=<?php echo $_GET["id"]?>">Voir le détail</a>
     <?php else: ?>
-        <p>Pas de carte associée</p>
+        <div class="alert alert-secondary" role="alert">Pas de carte associée</div>
     <?php endif ;?>        
 </div>
 

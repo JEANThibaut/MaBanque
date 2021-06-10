@@ -12,14 +12,9 @@
         exit;
     }
     
-    
     $accountModel=new AccountModel();
     $customer=$_SESSION["user"];
     $accounts = $accountModel->getAllAccount($customer->getId());
-    
-    
-
-
     
 
     require "view/indexView.php" 

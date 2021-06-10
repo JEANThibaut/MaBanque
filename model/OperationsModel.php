@@ -32,19 +32,33 @@
             public function __construct(){
                 $this->db = ConnexionModel::getDB();
             }
-            // public function __construct(){
-            //     $this->db = new PDO ('mysql:host=localhost;dbname=banque_php', 'root', '');
-            // }
+
+
+
+        function debitOperation(int $id, float $amount){
+            $query = $this->db->prepare(
+                "UPDATE account 
+                SET amount=:amount
+                WHERE id=:id"
+            );
+            $query->execute([
+                "id" => $id,
+                "amount" => $amount
+            ]);
+        }
         
-// function addCredit(PDO $db, array $operation):bool{
-//     $query= $db->prepare("INSERT INTO operation(operation_date, operation_type, operation_amount,:label, account_id)
-//                              VALUES (NOW(), 'virement' , :operation_amount, :account_id)");
-//     $result= $query->execute([
-//         "operation_amount" => $operation["operation"],
-//         "account_id" => $operation["credit_account"]
-//     ]);
-//     return $result;
-// }
+        function creditOperation(int $id, float $amount){
+            $query = $this->db->prepare(
+                "UPDATE account 
+                SET amount=:amount
+                WHERE id=:id"
+            );
+            $query->execute([
+                "id" => $id,
+                "amount" => $amount
+            ]);
+        }
+
     }
 ?>
 

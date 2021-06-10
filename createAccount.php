@@ -11,20 +11,17 @@
         exit;
     }
 
-    // $customerId=$_SESSION["user"]->getId();
-    // var_dump($customerId);
 
       if(!empty($_POST)){
-        // var_dump($_POST);
+
         
         $accountModel=new AccountModel();
         $newAccount = new Account($_POST);
-        var_dump($newAccount);
         $accountModel->addAccount($newAccount);
         }
-        // else{
-        //   header("Location:index.php");
-        // }
+        else{
+          header("Location:index.php");
+        }
       
 
       include "view/createAccountView.php"

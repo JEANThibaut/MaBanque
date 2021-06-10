@@ -4,23 +4,24 @@
 
 
 <div class="text-center">
-<h3>Type de compte</h3>
-<h4><?php echo $account->getAccount_type()?></h4>
+    <h3>Type de compte</h3>
+    <h4><?php echo $account->getAccount_type()?></h4>
 
-<div class="card w-50 text-center mx-auto">
-    <h5>Numéro du compte</h5>
-    <p><?php echo $account->getAccount_number()?></p>
-    <p>Solde restant : <?php echo $account->getAmount()?> €</p>
-    <h6>Carte associé :</h6>
-    
-    <?php if($creditCard):?>
-        <a class="btn btn-dark w-50 mx-auto" href="singleCard.php?id=<?php echo $_GET["id"]?>">Voir le détail</a>
-    <?php else: ?>
-        <div class="alert alert-secondary" role="alert">Pas de carte associée</div>
-    <?php endif ;?>        
-</div>
+    <div class="card w-50 text-center mx-auto">
+        <h5>Numéro du compte</h5>
+        <p><?php echo $account->getAccount_number()?></p>
+        <p>Solde restant : <?php echo $account->getAmount()?> €</p>
+        <h6>Carte associé :</h6>
+        
+        <?php if($creditCard):?>
+            <a class="btn btn-dark w-50 mx-auto" href="singleCard.php?id=<?php echo $_GET["id"]?>">Voir le détail</a>
+        <?php else: ?>
+            <div class="alert alert-secondary" role="alert">Pas de carte associée</div>
+        <?php endif ;?>        
+        <a class="btn btn-danger w-25" href="deleteAccount.php?id=<?php echo $account->getId();?>">Supprimer le compte</a>
+    </div>
 
-<h3>Dernière Opération</h3>
+    <h3>Dernière Opération</h3>
     <div class= "card w-50 text-center mx-auto">
         <p>Type d'opération : <?php echo $lastOperation->getOperation_type();?> </p>
         <p>Date de l'opération : <?php echo $lastOperation->getOperation_date();?> </p>
@@ -29,7 +30,13 @@
         <a class="btn btn-dark w-50 mx-auto" href="allOperations.php?id=<?php echo $_GET["id"]?>">Voir toutes les opérations</a>
     </div>
 
+    <div>
+    
     </div>
+    </div>
+</div>
+
+
 <?php
     include "view/layout/footer.php";
 ?>

@@ -22,12 +22,12 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="index.php" href="#">Acceuil</a>
+              <a class="nav-link active" aria-current="index.php" href="index.php">Acceuil</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Mes comptes</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.php">Voir mes comptes</a></li>
+                <!-- <li><a class="dropdown-item" href="index.php">Voir mes comptes</a></li> -->
                 <li><a class="dropdown-item" href="virement.php">Faire un virement</a></li>
                 <li><a class="dropdown-item" href="createAccount.php">Créer un compte</a></li>
                 <li><a class="dropdown-item" href="budget.php">Mon budget</a></li>

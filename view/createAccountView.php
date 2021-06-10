@@ -24,7 +24,7 @@ include "view/layout/header.php"
       <input type="number" name="uncover_perm" id="uncover_perm" class="form-control" placeholder="Entrer la somme ici" />
  
     </div>  
-    <input type="submit" value="Envoyer" class="bn btn-dark my-3"/>
+    <input type="submit" value="Envoyer" class="btn btn-dark my-3"/>
   </form>
 </div>
 </div>

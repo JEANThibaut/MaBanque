@@ -6,7 +6,7 @@
         protected int $id;
         protected string $operation_date;
         protected string $operation_type;
-        protected int $operation_amount;
+        protected float $operation_amount;
         protected string $label;
         protected int $account_id;
 
@@ -46,7 +46,7 @@
         }
 
 
-        public function setOperation_amount(string $operation_amount){
+        public function setOperation_amount(float $operation_amount){
             $this->operation_amount=$operation_amount;
         }
         public function getOperation_amount(){

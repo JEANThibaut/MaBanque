@@ -31,7 +31,7 @@ CREATE TABLE account (
     uncover_permission INT(20),
     customer_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (customer_id) REFERENCES customer(id)
+    FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );
 
 CREATE TABLE operation (
@@ -42,7 +42,7 @@ CREATE TABLE operation (
     label VARCHAR(50) NOT NULL,
     account_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (account_id) REFERENCES account(id)    
+    FOREIGN KEY (account_id) REFERENCES account(id) ON DELETE CASCADE
 );
 
 CREATE TABLE credit_card (
@@ -56,14 +56,14 @@ CREATE TABLE credit_card (
     without_contact VARCHAR(5) NOT NULL,
     code INT(4) NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (account_id) REFERENCES account(id)
+    FOREIGN KEY (account_id) REFERENCES account(id) ON DELETE CASCADE
 );
 
 INSERT INTO customer (customer_name, customer_lastname, birth_date, street_number, street, postal_code, city, phone, mail, customer_password)
 VALUES 
-('Martin','DURAND', '1975-05-12', 5,'rue de la Soif', '60000', 'Beauvais', 0689455612, 'martin.durand@mail.fr', 'MotdepasseDURAND'),
-('Berangère', 'Gallard', '1992-11-08', 12, 'avenue du champs', '60590', 'Trie-Château', 0621325465, 'berangere.gallard@mail.fr', 'MotdepasseGALLARD'),
-('Gerard', 'SEIGNEUR', '1964-05-26', 1, 'bis rue du long du mur', '27140', 'Bazincourt-sur-Epte', 0665548798, 'gerard.seigneur@mail.fr', 'MotdepasseSEIGNEUR');
+('Martin','DURAND', '1975-05-12', 5,'rue de la Soif', '60000', 'Beauvais', 0689455612, 'martin.durand@mail.fr', '$2y$10$A2QEiKYGpHsZtusrfuojp.cJwFaNDEUVgc1CQwYkDm45GSDdZn40a'),
+('Berangère', 'Gallard', '1992-11-08', 12, 'avenue du champs', '60590', 'Trie-Château', 0621325465, 'berangere.gallard@mail.fr', '$2y$10$srqxgtMCIB85zCpVVKIGDeKfudm4CK31mvVubO8h3CQMXlnYcvq76'),
+('Gerard', 'SEIGNEUR', '1964-05-26', 1, 'bis rue du long du mur', '27140', 'Bazincourt-sur-Epte', 0665548798, 'gerard.seigneur@mail.fr', '$2y$10$oOuCd20JKl2Ehtap8sOqh.v1BVTGaelN/8rQ5pUqKuu.rpH3uHPOe');
 
 INSERT INTO account (account_type, create_date, account_number, amount, uncover_permission, customer_id)
 VALUES
@@ -88,4 +88,5 @@ VALUES
 ("Virement",562.36, 'Accompte du mois de Juin',2),
 ('Paiement Carte', -895.25,'Achat fournitures',5),
 ('Virement', 200, 'premier versement',3),
-('Virement', 200, 'premier versement',4)
+('Virement', 200, 'premier versement',4),
+('virement',100, 'premier versement',6)

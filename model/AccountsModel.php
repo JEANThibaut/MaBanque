@@ -39,30 +39,16 @@
             return $result;
         }
         
-        // function debitOperation($id){
-        //     $query = $this->db->prepare(
-        //         "UPDATE account 
-        //         SET amount=:amount
-        //         WHERE id=:id"
-        //     );
-        //     $query->execute([
-        //         "id" => $id,
-        //         "amount" => "amount"-$id["operation"]
-        //     ]);
-        // }
-        
-        // function creditOperation($id){
-        //     $query = $this->db->prepare(
-        //         "UPDATE account 
-        //         SET amount=:amount
-        //         WHERE id=:id"
-        //     );
-        //     $query->execute([
-        //         "id" => $id,
-        //         "amount" => "amount"+$id["operation"]
-        //     ]);
-        // }
+        function deleteAccount(int $id, int $customer_id){
+            $query=$this->db->prepare("DELETE FROM account WHERE id=:id AND customer_id=:customer_id");
+            $result=$query->execute([
+                "id"=>$id,
+                "customer_id"=>$customer_id
+            ]);
+            return $result;
+        }
 
+   
         public function __construct(){
             $this->db = ConnexionModel::getDB();
         }

@@ -18,7 +18,7 @@
         <?php else: ?>
             <div class="alert alert-secondary" role="alert">Pas de carte associée</div>
         <?php endif ;?>        
-        <a class="btn btn-danger w-25" href="deleteAccount.php?id=<?php echo $account->getId();?>">Supprimer le compte</a>
+       
     </div>
 
     <h3>Dernière Opération</h3>

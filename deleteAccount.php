@@ -10,17 +10,18 @@
         exit;
     }
     
-    var_dump($_GET);
+    // var_dump($_GET);
     $user=$_SESSION["user"];
     $accountModel= new AccountModel();
-    $account = $accountModel->getSingleAccount($_GET["id"]);
+    $accounts= $accountModel->getAllAccount($user->getId());
 
     if(!empty($_POST)){
-            $accountModel->deleteAccount($_GET["id"], $user->getId());
+
+            $accountModel->deleteAccount($_POST["id"], $user->getId());
             header ("Location:index.php");
             exit();
     }
-    
+
     
     
     

@@ -11,8 +11,8 @@ include "view/layout/header.php"
 <div class=" w-50 mx-auto">
   <form class="text-center" action="" method="post">
     <div>
-    <label for="account-type" class="form-label">Choisissez votre type de compte</label>
-      <select name="account_type" id="account-type" class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <label for="account-type" class="form-label">Choisissez votre compte</label>
+      <select name="account_type" id="account-type" class="form-select" aria-label=".form-select-sm example">
         <option value="CompteCourant">Compte courant</option>
         <option value="ComptePro">Compte Professionel</option>
         <option value="LivretA">Livret A</option>
@@ -22,10 +22,10 @@ include "view/layout/header.php"
     <input type="number" name="amount" id="amount" class="form-control" placeholder="Entrer la somme ici" required/>
     <div>
       <label for="uncover_perm" class="form-label ">Voulez vous une autorisation de découvert?</label>
-      <input type="number" name="uncover_perm" id="uncover_perm" class="form-control" placeholder="Entrer la somme ici" />
+      <input type="number" name="uncover_perm" id="uncover_perm" class="form-control" placeholder="Merci d'entrer la somme désirée, mettre zero si aucune autorisation" />
  
     </div>  
-    <input type="submit" value="Envoyer" class="btn btn-dark my-3"/>
+    <input type="submit" value="Envoyer" class="btn btn-dark my-3 w-25"/>
   </form>
 </div>
 </div>

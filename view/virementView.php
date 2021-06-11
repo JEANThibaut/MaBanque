@@ -26,7 +26,7 @@
                 <?php endforeach;?>
             </select>           
         </div>
-        <input type="submit" value="Envoyer" class="my-3 btn btn-dark"/>
+        <input type="submit" value="Envoyer" class="my-3 btn btn-dark w-25"/>
     </form>
 </div>
 

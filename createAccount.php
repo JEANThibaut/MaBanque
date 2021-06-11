@@ -17,11 +17,16 @@
         
         $accountModel=new AccountModel();
         $newAccount = new Account($_POST);
-        $accountModel->addAccount($newAccount);
+        $addAccount=$accountModel->addAccount($newAccount);
+        var_dump($addAccount);
+        // header("Location:index.php");
+        if($addAccount){
+        header ("Refresh: 5;URL=index.php");
         }
-        else{
-          header("Location:index.php");
         }
+        // else{
+        //   header("Location:index.php");
+        // }
       
 
       include "view/createAccountView.php"

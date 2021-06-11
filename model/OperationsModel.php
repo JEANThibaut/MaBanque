@@ -35,29 +35,29 @@
 
 
 
-        function debitOperation(int $id, float $amount){
-            $query = $this->db->prepare(
-                "UPDATE account 
-                SET amount=:amount
-                WHERE id=:id"
-            );
-            $query->execute([
-                "id" => $id,
-                "amount" => $amount
-            ]);
-        }
+        // function debitOperation(int $id, float $amount){
+        //     $query = $this->db->prepare(
+        //         "UPDATE account 
+        //         SET amount=:amount
+        //         WHERE id=:id"
+        //     );
+        //     $query->execute([
+        //         "id" => $id,
+        //         "amount" => $amount
+        //     ]);
+        // }
         
-        function creditOperation(int $id, float $amount){
-            $query = $this->db->prepare(
-                "UPDATE account 
-                SET amount=:amount
-                WHERE id=:id"
-            );
-            $query->execute([
-                "id" => $id,
-                "amount" => $amount
-            ]);
-        }
+        // function creditOperation(int $id, float $amount){
+        //     $query = $this->db->prepare(
+        //         "UPDATE account 
+        //         SET amount=:amount
+        //         WHERE id=:id"
+        //     );
+        //     $query->execute([
+        //         "id" => $id,
+        //         "amount" => $amount
+        //     ]);
+        // }
 
     }
 ?>

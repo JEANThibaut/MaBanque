@@ -10,29 +10,16 @@
         exit;
     }
     
-    // var_dump($_GET);
     $user=$_SESSION["user"];
     $accountModel= new AccountModel();
     $accounts= $accountModel->getAllAccount($user->getId());
 
-    if(!empty($_POST)){
+    if(!empty($_POST["test1"])){
 
             $accountModel->deleteAccount($_POST["id"], $user->getId());
             header ("Location:index.php");
             exit();
     }
-
-    
-    
-    
-
-    // if($_POST){
-    //     var_dump($_POST);
-    // }
-
-
-
-
 
     include "view/deleteAccountView.php";
 ?>

@@ -31,7 +31,7 @@
             $this->id=$id;
         }
         public function getId(){
-        return $this->id;
+        return htmlspecialchars($this->id);
         }
 
 
@@ -39,7 +39,7 @@
             $this->account_id=$account_id;
         }
         public function getAccount_id(){
-            return $this->account_id;
+            return htmlspecialchars($this->account_id);
         }
 
 
@@ -47,7 +47,7 @@
             $this->card_number=$card_number;
         } 
         public function getCard_number(){
-            return $this->card_number;
+            return htmlspecialchars($this->card_number);
         }
 
 
@@ -55,7 +55,7 @@
             $this->crypto=$crypto;
         }
         public function getCrypto(){
-            return $this->crypto;
+            return htmlspecialchars($this->crypto);
         }
 
 
@@ -63,7 +63,7 @@
             $this->card_type=$card_type;
         }
         public function getCard_type(){
-            return $this->card_type;
+            return htmlspecialchars($this->card_type);
         }
 
 
@@ -71,7 +71,7 @@
             $this->payement_perm=$payement_perm;
         }
         public function getPayement_perm(){
-            return $this->payement_perm;
+            return htmlspecialchars($this->payement_perm);
         }
 
 
@@ -79,7 +79,7 @@
             $this->debit_perm=$debit_perm;
         }
         public function getDebit_perm(){
-            return $this->debit_perm;
+            return htmlspecialchars($this->debit_perm);
         }
 
 
@@ -87,7 +87,7 @@
             $this->without_contact=$without_contact;
         }
         public function getWithout_contact(){
-            $this->without_contact;
+            return htmlspecialchars($this->without_contact);
         }
 
 

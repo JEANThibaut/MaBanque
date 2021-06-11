@@ -5,6 +5,7 @@ include "view/layout/header.php"
 <div class="text-center">
   <h2>Création de votre compte</h2>
 
+<?php if(empty($_POST)): ?>
   <p>Afin de créer votre compte merci de bien vouloir remplir le formulaire suivant:</p>
 
 <div class=" w-50 mx-auto">
@@ -28,6 +29,7 @@ include "view/layout/header.php"
   </form>
 </div>
 </div>
+<?php endif;?>
 
 <?php
     include "view/layout/footer.php";

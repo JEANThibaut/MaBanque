@@ -5,9 +5,10 @@
         private PDO $db;
 
         function getAllAccount(int $id){
-            $query = $this->db->prepare("SELECT * FROM account WHERE customer_id=:id");
+            $query = $this->db->prepare("SELECT * FROM account WHERE customer_id=:id ");
             $query->execute([
                 "id" => $id
+                
             ]);
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             foreach($result as $key=>$account){
@@ -16,10 +17,11 @@
             return $result;
         }
         
-        function getSingleAccount(int $id){
-            $query=$this->db->prepare("SELECT * FROM account WHERE id=:id");
+        function getSingleAccount(int $id, int $customer_id){
+            $query=$this->db->prepare("SELECT * FROM account WHERE id=:id AND customer_id=:customer_id");
             $query->execute([
-                "id"=> $id
+                "id"=> $id,
+                "customer_id"=>$customer_id
             ]);
             $result = $query->fetch(PDO::FETCH_ASSOC);
             $result = new Account($result);

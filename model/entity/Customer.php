@@ -31,7 +31,7 @@
             $this->id=$id;
         }
         public function getId(){
-            return $this->id;
+            return htmlspecialchars($this->id);
         }
 
 
@@ -39,7 +39,7 @@
             $this->customer_name=$customer_name;
         }
         public function getCustomer_name(){
-            return $this->customer_name;
+            return htmlspecialchars($this->customer_name);
         }
 
         
@@ -47,7 +47,7 @@
             $this->customer_lastname=$customer_lastname;
         }
         public function getCustomer_lastname(){
-            return $this->customer_lastname;
+            return htmlspecialchars($this->customer_lastname);
         }
 
 
@@ -56,7 +56,7 @@
         }
 
         public function getBirth_date(){
-            return $this->birth_date;
+            return htmlspecialchars($this->birth_date);
         }
 
 
@@ -64,14 +64,14 @@
             $this->street_number=$street_number;
         }
         public function getStreet_number(){
-            return $this->street_number;
+            return htmlspecialchars($this->street_number);
         }
 
         public function setStreet(string $street){
             $this->street=$street;
         }
         public function getStreet(){
-            return $this->street;
+            return htmlspecialchars($this->street);
         }
 
 
@@ -79,7 +79,7 @@
             $this->postal_code=$postal_code;
         }
         public function getPostal_code(){
-            return $this->postal_code;
+            return htmlspecialchars($this->postal_code);
         }
 
 
@@ -87,7 +87,7 @@
             $this->city=$city;
         }
         public function getCity(){
-            return $this->city;
+            return htmlspecialchars($this->city);
         }
 
 
@@ -95,7 +95,7 @@
             $this->phone=$phone;
         }
         public function getPhone(){
-            return $this->phone;
+            return htmlspecialchars($this->phone);
         }
 
         
@@ -103,7 +103,7 @@
             $this->mail=$mail;
         }
         public function getMail(){
-            return $this->mail;
+            return htmlspecialchars($this->mail);
         }
 
         public function setCustomer_password(string $customer_password){
@@ -111,7 +111,7 @@
         }
 
         public function getCustomer_password(){
-            return $this->customer_password;
+            return htmlspecialchars($this->customer_password);
         }
 
 

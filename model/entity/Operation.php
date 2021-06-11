@@ -27,14 +27,14 @@
             $this->id=$id;
         }
         public function getId(){
-            return $this->id;
+            return htmlspecialchars($this->id);
         }
 
         public function setOperation_date(string $operation_date){
             $this->operation_date=$operation_date;
         }
         public function getOperation_date(){
-            return $this->operation_date;
+            return htmlspecialchars($this->operation_date);
         }
 
 
@@ -42,7 +42,7 @@
             $this->operation_type=$operation_type;
         }
         public function getOperation_type(){
-            return $this->operation_type;
+            return htmlspecialchars($this->operation_type);
         }
 
 
@@ -50,7 +50,7 @@
             $this->operation_amount=$operation_amount;
         }
         public function getOperation_amount(){
-            return $this->operation_amount;
+            return htmlspecialchars($this->operation_amount);
         }
 
 
@@ -58,7 +58,7 @@
             $this->label=$label;
         }
         public function getLabel(){
-            return $this->label;
+            return htmlspecialchars($this->label);
         }
 
 
@@ -66,7 +66,7 @@
             $this->account_id=$account_id;
         }
         public function getAccount_id(){
-            return $this->account_id;
+            return htmlspecialchars($this->account_id);
         }
 
 

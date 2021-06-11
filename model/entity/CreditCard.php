@@ -95,7 +95,7 @@
             $this->code=$code;
         }
         public function getCode(){
-            return $this->code;
+            return htmlspecialchars($this->code);
         }
 
     }

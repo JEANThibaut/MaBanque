@@ -26,7 +26,7 @@
         $this->id=$id;
     }
     public function getId(){
-        return $this->id;
+        return htmlspecialchars($this->id);
     }
 
 
@@ -34,7 +34,7 @@
         $this->account_type=$account_type;
     }
     public function getAccount_type(){
-        return $this->account_type;
+        return htmlspecialchars($this->account_type);
     }
 
 
@@ -42,7 +42,7 @@
         $this->account_number=$account_number;
     }
     public function getAccount_number(){
-        return $this->account_number;
+        return htmlspecialchars($this->account_number);
     }
 
 
@@ -50,7 +50,7 @@
         $this->amount=$amount;
     }
     public function getAmount(){
-        return $this->amount;
+        return htmlspecialchars($this->amount);
     }
 
 
@@ -58,14 +58,14 @@
         $this->uncover_permission=$uncover_permission;
     }
     public function getUncover_permission(){
-        return $this->uncover_permission;
+        return htmlspecialchars($this->uncover_permission);
     }
 
     public function setCustomer_id(int $customer_id){
         $this->customer_id=$customer_id;
     }
     public function getCustomer_id(){
-        return $this->customer_id;
+        return htmlspecialchars($this->customer_id);
     }
 
 

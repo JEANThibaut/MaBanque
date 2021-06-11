@@ -6,6 +6,7 @@
     require "model/entity/Operation.php";
     require "model/OperationsModel.php";
     require "model/entity/Customer.php";
+    require "model/CustomerModel.php";
     require "model/TransactionModel.php";
 
 
@@ -14,12 +15,13 @@
         header("Location:login.php");
         exit;
     }
+    $userId=$_SESSION["user"]->getId();
     $transaction= New TransactionModel();
     $accountModel= new AccountModel();
-    $allAccounts= $accountModel->getAllAccount($_SESSION["user"]->getId());
+    $allAccounts= $accountModel->getAllAccount($userId);
     if($_POST){
-        $credit_account= $accountModel->getSingleAccount($_POST["credit_account"]);
-        $debit_account= $accountModel->getSingleAccount($_POST["debit_account"]);
+        $credit_account= $accountModel->getSingleAccount($_POST["credit_account"],$userId);
+        $debit_account= $accountModel->getSingleAccount($_POST["debit_account"],$userId);
         $operationAmount=floatval($_POST["operation_amount"]);
        
         //Operation:
